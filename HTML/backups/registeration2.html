@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registeration</title>
+    <link rel="stylesheet" href="styles/patientrecords.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/registrationpage.css">
+    <script src="script/registration.js" defer></script>
+</head>
+
+
+<body>
+    <nav>
+        <h1>Medical Management System</h1>
+        <div class="nav">
+            <a href="adminhome.php">Home</a>
+            <a href="registeration.html">Patient Registeration</a>
+            <a href="patientrecords.php">Patient Checkup Entries</a>
+            <a href="sales_medicine.php">Sale Medicine</a>
+            <a href="medicinesalereport.php">Sales Report</a>
+            <a href="updatestocks.php">Update Stocks</a>
+            <a href="logout.php">Log out</a>
+        </div>
+    </nav>
+    <div class="records">
+        <h1 style="text-align: center;">New Patient Registeration</h1>
+    <form action="registeration.php" method="post" return formValidate()">
+        <table>
+            <tr>
+                <td><label>Patient Name *</label></td>
+                <td>:  <input type="text" id="name" name="name"
+                    placeholder="Enter Patient Name" oninput="nameValidate()" required></td>
+                <td><div class="error" id="nameerror">
+                    Name must be within 3-20 characters.</div></td>
+            </tr>
+            <tr>
+                <td><label>Date Of Birth *</label></td>
+                <td>:  <input type="date" id="dob" name="dob" required></td>
+            </tr>
+            <tr>
+                <td><label>Gender *</label></td>
+                <td>:  <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="male" name="gender">Male</option>
+                        <option value="female" name="gender">Female</option>
+                        <option value="other" name="gender">Other</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><label>Contact No. *</label></td>
+                <td>:  <input type="text" id="contact_no" name="contact_no"
+                    placeholder="Enter Contact No." oninput="contactValidate()" required></td>
+                <td><div class="error" id="contacterror">Must be 10 digits.</div></td>
+            </tr>
+            <tr>
+                <td><label>Mail ID *</label></td>
+                <td>:  <input type="text" id="email" name="email_id"
+                    placeholder="Enter E-Mail ID" oninput="emailValidate()" required></td>
+                <td><div class="error" id="emailerror">Email invalid.</div></td>
+            </tr>
+            <tr>
+                <td><label>Password *</label></td>
+                <td>:  <input type="password" id="psw" name="password"
+                    placeholder="Enter Password" oninput="pswValidate()" required></td>
+                <td><div class="error" id="pswerror">
+                    Password must be 8-12 characters includes a special, a upper, a lower, a digit.</div></td>
+            </tr>
+            <tr>
+                <td><label>Confirm Password *</label></td>
+                <td>:  <input type="password" id="rpsw" 
+                    placeholder="Re-Enter Password" oninput="rpswValidate()" required>
+                </td>
+                <td><div class="error" id="rpswerror">Must be same as password.</div></td>
+            </tr>
+            <tr>
+                <td><label>Address *</label></td>
+                <td><textarea rows="5" cols="30" id="address" name="address" style="min-width: 300px;"
+                    placeholder="Enter Address" oninput="addressValidate()" required></textarea></td>
+                <td><div class="error" id="addresserror">Address must be within 10-150 charactes.</div></td>
+            </tr>
+            <tr>
+                <td><button type="submit" onclick="">Register</button></td>
+                <td><button type="reset">Clear All</button></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</body>
+</html>
