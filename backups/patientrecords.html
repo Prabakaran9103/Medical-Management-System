@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>Patient Records</title>
+    <link rel="stylesheet" href="styles/patientrecords.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <script src="script/patientrecords.js" defer></script>
+
+</head>
+
+<body>
+    <nav>
+        <h1>Medical Management System</h1>
+        <div class="nav">
+            <a href="adminhome.html">Home</a>
+            <a href="patientrecords.html">Patient Checkup Entries</a>
+            <a href="sales_medicine.php">Sale Medicine</a>
+            <a href="medicinesalereport.html">Sales Report</a>
+            <a href="updatestock.php">Update Stocks</a>
+            <a href="logout.php">Log out</a>
+        </div>
+    </nav>
+    <h1>Patient Records</h1>
+    <form action="" method="post">
+        <div class="records">
+            <div class="record"><lable>Patinet ID :</lable>
+                <input type="text" name="patient_id" placeholder="Enter patient Id"></div>
+            <div class="record"><lable>Height (in cm) :</lable>
+                <input type="text" id="height" name="height" required placeholder="Enter Height" oninput="heightValidate()">
+                <label class="error" id="heighterror">*Invalid input</label></div>
+            <div class="record"><lable>Weight (in kg) :</lable>
+                <input type="text" id="weight" name="weight" required placeholder="Enter  Weight" oninput="weightValidate()">
+                <label class="error" id="weighterror">*Invalid input</label></div>
+            <div class="record"><lable>BMI :</lable>
+                <input type="text" id="bmi" name="bmi"></div>
+            <div class="record"><lable>Sugar Level (in mol/g):</lable>
+                <input type="text" id="sugar_level" name="sugar_level" placeholder="Enter Sugar Level" oninput="sugarLevelValidate()">
+                <label class="error" id="sugarlevelerror">*Invalid input</label></div>
+            <div class="record"><label>Blood Pressure (in mmHg) :</label>
+                <input type="text" id="bp_level" name="bp_level" placeholder="Enter Blood Pressure"></div>
+            <div class="record"><lable>Reason for Visit :</lable>
+                <textarea name="reason_of_visit" required placeholder="Enter reason for visit"></textarea></div>
+        </div>
+        <div>
+            <button type="submit">Enter</button>
+            <button type="reset">Clear All</button>
+        </div>
+    </form>
+</body>
+
+</html>
